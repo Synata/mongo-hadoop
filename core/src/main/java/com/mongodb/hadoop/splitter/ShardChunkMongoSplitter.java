@@ -56,7 +56,6 @@ public class ShardChunkMongoSplitter extends MongoCollectionSplitter {
     public List<InputSplit> calculateSplits() throws SplitFailedException {
         this.init();
         boolean targetShards = MongoConfigUtil.canReadSplitsFromShards(getConfiguration());
-
         DB configDB = this.mongo.getDB("config");
         DBCollection chunksCollection = configDB.getCollection("chunks");
 
